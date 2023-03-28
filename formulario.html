@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario
+    </title>
+</head>
+<body>
+    <form action="procesar.html" method="get"></form> <!--"action=""; Insertamos el link del elemento que vamos a procesar-->
+
+    <fieldset>
+        <legend>Controles del formulario</legend>
+        <label for="textoDelInput1">Usuariuo:</label>
+        <input type="text" 
+        id="textoDelInput1"
+        title="Ingresar máximo 5 letras"
+        value="Mensaje predeterminado" 
+        name="textoDelInput"
+        pattern="[A-Za-z]{0-5}"
+        readonly
+        tabindex="1"
+        required>    
+         <!--"id"; para enlazar al JS. "name"; para enviar datos al servidor
+        value=""; se usa para cuando el usuario no ingresa ningún valor, el formulario tóma ese mensaje como predeterminado
+        pattern=; Expreciones regulares... son delimitadores y reglas para el ingreso de texto (Es lo que quiero que el usuario cumpla)
+        title="" Mensaje que aparecerá cuando pasemos el mouse por encima
+        readonly; Es para que el campo sea de sólo lectura
+        tabindex; Es para identificar el orden del controlador para navegar con tab
+        required; Es para que ese formulario sea obligatorio-->
+
+        <br>
+        <br>
+
+        <label for="correo">Correo</label>
+        <input type="text"
+        id="correo"
+        name="correo"
+        pattern="@"
+        multiple
+        > <!--multiple; Podemos poner más de un correo en el mismo campo-->
+
+        <br>
+        <br>
+        
+        <label for="telefono">Tel.</label>
+        <input type="tel"
+        id="telefono"
+        name="tel"
+        pattern="[0-9]"
+        multiple
+        required>
+        <br>
+        <br>
+        <label for="Fecha">Fecha:</label>
+        <input type="date" id="Fecha" name="Fecha">
+        <br>
+        <br>
+        <!--Radio Button: Sirven para seleccionar una sóla opción entre diferentes items-->
+        <input type="radio" name="edad" id="joven" value="0-25">
+        <label for="joven">joven</label>
+        <input type="radio" name="edad" id="adulto" value="26-55">
+        <label for="adulto">adulto</label>
+        <input type="radio" name="edad" id="adultoMayor" value="más de 55">
+        <label for="adultoMayor">adultoMayor</label>
+        <br>
+        <br>
+        <label for="Rango">Rango:</label>
+        <input type="range" name="Radio" id="Radio" min="1" max="10">
+        <br>
+        <br>
+        <label for="Condiciones">Términos:</label>
+        <input type="checkbox" name="Condiciones" id="Condiciones" value="no">
+        
+        <br>
+        <br>
+        <label for="Pais">Seleccionar pais:</label>
+        <select name="Pais" id="Pais">
+            <option value="br">Brasil</option>
+            <option value="ec">Ecuador</option>
+            <option value="co">Colombia sel</option>
+            <option value="ch">Chile</option>
+        </select>
+        <br>
+        <br>
+        <textarea name="datos" id="datos" cols="30" rows="10"></textarea>
+
+        <br>
+        <br>
+        <input type="submit">
+        <button type="reset">Borrar</button>
+        <button type="submit">Enviar</button>
+        <button onclick="mostrarFuncion()">Revisasr consola</button>
+        <button id="otroBoton">otroBoton</button>
+    </fieldset>
+    <script src="programa.js"></script>
+</body>
+</html>
